@@ -72,3 +72,58 @@ Invoke different services through REST with JSON
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+
+## Diagramas
+
+### Diagrama de flujo de la aplicación
+```plantuml
+@startuml
+start
+
+:Usuario envía mensaje;
+:Backend recibe mensaje;
+:Backend envía prompt a IA (Ollama);
+:IA genera respuesta;
+:Backend interpreta la respuesta;
+
+if (¿Hay instrucciones tool?) then (sí)
+  :Backend ejecuta tool (BD, API, etc.);
+  :Tool devuelve resultado;
+  :Backend actualiza prompt con resultado tool;
+  :Backend envía prompt actualizado a IA;
+  :IA genera texto final;
+  :Backend envía respuesta final al usuario;
+else (no)
+  :IA genera texto final;
+  :Backend envía respuesta final al usuario;
+endif
+
+stop
+@enduml
+```
+### Diagrama de casos de uso 
+```plantuml
+@startuml
+actor Usuario
+participant Backend
+participant IA
+participant Tool
+
+Usuario -> Backend : Envía mensaje
+Backend -> IA : Envía prompt
+
+alt Hay instrucciones tool
+    Backend -> Tool : Ejecutar tool
+    Tool -> Backend : Resultado tool
+    Backend -> IA : Actualizar prompt con resultado
+else
+    IA -> Backend : Generar texto final
+end
+
+Backend -> Usuario : Respuesta final
+@enduml
+
+
+
+```
