@@ -13,7 +13,7 @@ public class McpAgentClient {
         McpMessage message = new McpMessage();
         message.type = "taskRequest";
         message.agentId = "agent-001";
-        message.content = "máximo sueldo?";
+        message.content = "más cobra";
 
         // Serializar a JSON
         ObjectMapper mapper = new ObjectMapper();
