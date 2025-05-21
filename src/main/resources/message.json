@@ -1,0 +1,13 @@
+{
+  "header": {
+    "$id": "urn:mcp:task:12345",
+    "title": "Solicitud de Tarea",
+    "type": "TASK_REQUEST",
+    "timestamp": "2025-05-20T12:00:00Z"
+  },
+  "payload": {
+    "taskId": "TASK-123",
+    "priority": "HIGH",
+    "deadline": "2025-05-21T00:00:00Z"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$id": "https://example.org/schemas/completion.schema.json",
+  "type": "object",
+  "required": ["taskId", "status"],
+  "properties": {
+    "taskId": { "type": "string" },
+    "status": { "type": "string", "enum": ["success", "failure"] },
+    "duration": { "type": "number" },
+    "result": { "type": "object" }
+  }
+}

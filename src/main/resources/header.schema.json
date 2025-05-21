@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.org/schemas/header.schema.json",
+  "type": "object",
+  "required": ["sender", "receiver", "timestamp", "messageId", "messageType"],
+  "properties": {
+    "sender": { "type": "string" },
+    "receiver": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "messageId": { "type": "string", "format": "uuid" },
+    "messageType": {
+      "type": "string",
+      "enum": ["taskRequest", "contextUpdate", "completion"]
+    }
+  }
+}

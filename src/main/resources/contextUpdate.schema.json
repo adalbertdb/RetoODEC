@@ -1,0 +1,8 @@
+{
+  "$id": "https://example.org/schemas/contextUpdate.schema.json",
+  "type": "object",
+  "required": ["context"],
+  "properties": {
+    "context": { "type": "object" }
+  }
+}
