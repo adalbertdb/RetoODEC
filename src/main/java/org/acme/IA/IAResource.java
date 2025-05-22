@@ -1,8 +1,11 @@
-package com.ejemplo;
+package com.acme;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
+import java.util.concurrent.CompletionStage;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
 
 @Path("/ia")
 public class IAResource {
@@ -12,7 +15,6 @@ public class IAResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getRespuesta(@QueryParam("prompt") String prompt) {
-        return IAService.consultarIAAsync(prompt);
-    }
+    IAService service = new IAService();
+    CompletionStage<Response> response = service.consultarIAAsync("tu prompt");
 }
