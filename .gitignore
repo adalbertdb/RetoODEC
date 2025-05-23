@@ -44,11 +44,8 @@ nb-configuration.xml
 # TLS Certificates
 .certs/
 
-# Fichero de configuración
-
-'src/main/resources/application.properties'
 
 # Logs
 
-logs/
+logs/*
 
