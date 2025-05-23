@@ -60,12 +60,7 @@
         <artifactId>quarkus-resteasy-client</artifactId>
     </dependency>
 
-    <!-- Soporte para JSON-B (si quieres usar JSON-B) -->
-    <dependency>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-resteasy-jsonb</artifactId>
-    </dependency>
-
+   
     <!-- Opcional: para usar Jackson en lugar de JSON-B -->
     <dependency>
         <groupId>io.quarkus</groupId>
